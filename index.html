@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101426" />
+  <meta name="description" content="STUDYVERSE — ruang belajar moden untuk semua pelajar." />
+  <title>STUDYVERSE — Your space to grow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Studyverse home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>STUDY<span class="brand-light">VERSE</span></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span> Overview</button>
+        <button class="nav-link" data-page="courses"><span class="nav-icon">▤</span> My learning</button>
+        <button class="nav-link" data-page="notes"><span class="nav-icon">▧</span> My notes</button>
+        <button class="nav-link" data-page="quiz"><span class="nav-icon">◈</span> Quiz centre</button>
+      </nav>
+      <div class="workspace-label tools-label">TOOLS</div>
+      <nav class="main-nav">
+        <button class="nav-link" data-page="planner"><span class="nav-icon">▦</span> Study planner</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-orb">✦</div>
+          <strong>Make progress<br>every day.</strong>
+          <p>Small steps create big results.</p>
+          <button class="upgrade-button" data-page="courses">Explore learning <span>↗</span></button>
+        </div>
+        <button class="profile-mini" id="profileButton">
+          <span class="avatar">R</span>
+          <span class="profile-copy"><strong>Radzi</strong><small>Free student account</small></span>
+          <span class="profile-more">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="breadcrumbCurrent">Overview</strong></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search subjects, notes..." /><kbd>⌘ K</kbd></label>
+          <button class="icon-button" id="themeToggle" title="Toggle appearance" aria-label="Toggle appearance">◐</button>
+          <button class="notification-button" id="notificationButton" aria-label="Notifications">♧<i></i></button>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> MONDAY, YOUR FRESH START</div>
+            <h1>Good evening, Radzi <span class="wave">✦</span></h1>
+            <p class="muted">Ready to make today count? Let’s keep your momentum going.</p>
+          </div>
+          <button class="primary-button" data-page="courses"><span>＋</span> Explore subjects</button>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="hero-tag"><span>✧</span> YOUR LEARNING JOURNEY</div>
+            <h2>Learn something<br><em>extraordinary.</em></h2>
+            <p>Build better habits, understand difficult topics and turn your goals into progress — one session at a time.</p>
+            <button class="hero-button" data-page="courses">Continue learning <span>→</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-core"><span>✦</span></div>
+            <div class="art-chip chip-top">FOCUS <b>ON</b></div>
+            <div class="art-chip chip-bottom"><span class="tiny-spark">✧</span> KEEP GROWING</div>
+            <div class="art-star star-one">✦</div><div class="art-star star-two">✧</div>
+          </div>
+          <div class="hero-glow"></div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">◷</span><span class="stat-trend">THIS WEEK</span></div><div class="stat-number"><strong id="studyHours">2.5</strong><small>hrs</small></div><div class="stat-label">Study time <span class="stat-note">Keep it consistent</span></div><div class="mini-bars"><i style="height:28%"></i><i style="height:48%"></i><i style="height:38%"></i><i style="height:72%"></i><i style="height:54%"></i><i style="height:88%"></i><i class="bar-current" style="height:63%"></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">▤</span><span class="stat-trend">YOUR LIBRARY</span></div><div class="stat-number"><strong id="notesCount">3</strong><small>notes</small></div><div class="stat-label">Notes saved <span class="stat-note">Ideas worth keeping</span></div><div class="stat-bottom-line"><span style="width:68%"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon orange">◎</span><span class="stat-trend">KEEP IT UP</span></div><div class="stat-number"><strong id="quizAverage">80</strong><small>%</small></div><div class="stat-label">Quiz average <span class="stat-note">Your latest performance</span></div><div class="stat-bottom-line orange-line"><span style="width:80%"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon green">✧</span><span class="stat-trend">PERSONAL BEST</span></div><div class="stat-number"><strong id="streakCount">3</strong><small>days</small></div><div class="stat-label">Learning streak <span class="stat-note">Show up for yourself</span></div><div class="streak-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i></i><i></i><i></i><i></i></div></article>
+        </div>
+
+        <div class="section-heading"><div><div class="eyebrow">PICK UP WHERE YOU LEFT OFF</div><h3>Continue learning</h3></div><button class="text-button" data-page="courses">View all subjects <span>→</span></button></div>
+        <div class="course-grid" id="dashboardCourses"></div>
+
+        <div class="lower-grid">
+          <section class="panel activity-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR MOMENTUM</div><h3>Weekly activity</h3></div><span class="select-static">This week⌄</span></div><div class="activity-chart"><div class="chart-y"><span>3h</span><span>2h</span><span>1h</span><span>0</span></div><div class="chart-main"><div class="chart-lines"><i></i><i></i><i></i><i></i></div><div class="chart-columns"><div><b style="height:35%"></b><small>Mon</small></div><div><b style="height:58%"></b><small>Tue</small></div><div><b style="height:42%"></b><small>Wed</small></div><div><b style="height:76%"></b><small>Thu</small></div><div><b style="height:53%"></b><small>Fri</small></div><div><b style="height:90%"></b><small>Sat</small></div><div><b class="today-column" style="height:25%"></b><small>Sun</small></div></div></div></div><div class="chart-foot"><span><i class="legend-dot"></i> Study hours</span><strong>+12% <small>vs last week</small></strong></div></section>
+          <section class="panel tasks-panel"><div class="panel-heading"><div><div class="eyebrow">STAY ON TRACK</div><h3>Today’s focus</h3></div><button class="more-button" data-page="planner">•••</button></div><div id="dashboardTasks" class="task-list"></div><button class="add-task-button" id="addTaskButton">＋ Add a task</button></section>
+        </div>
+        <footer class="footer">Made for curious minds. <span>STUDYVERSE © 2026</span></footer>
+      </section>
+
+      <section class="page" id="page-courses">
+        <div class="page-title-row"><div><div class="eyebrow">EXPLORE & GROW</div><h1>My learning</h1><p class="muted">A little progress each day adds up to big results.</p></div><div class="title-actions"><label class="inline-search">⌕ <input id="courseSearch" placeholder="Find a subject..." /></label></div></div>
+        <div class="filter-row" id="courseFilters"><button class="filter-chip selected" data-filter="All">All subjects <span>6</span></button><button class="filter-chip" data-filter="Science">Science</button><button class="filter-chip" data-filter="Technology">Technology</button><button class="filter-chip" data-filter="Languages">Languages</button><button class="filter-chip" data-filter="Business">Business</button></div>
+        <div class="course-grid all-courses" id="allCourses"></div>
+        <footer class="footer">Keep exploring. Keep becoming. <span>STUDYVERSE © 2026</span></footer>
+      </section>
+
+      <section class="page" id="page-notes">
+        <div class="page-title-row"><div><div class="eyebrow">YOUR PERSONAL LIBRARY</div><h1>My notes</h1><p class="muted">Keep your best ideas, summaries and discoveries in one place.</p></div><button class="primary-button" id="newNoteButton">＋ Create note</button></div>
+        <div class="notes-toolbar"><label class="inline-search">⌕ <input id="noteSearch" placeholder="Search your notes..." /></label><span class="results-count" id="noteResultCount">3 notes</span></div>
+        <div class="notes-grid" id="notesGrid"></div>
+        <footer class="footer">Your knowledge, beautifully organised. <span>STUDYVERSE © 2026</span></footer>
+      </section>
+
+      <section class="page" id="page-quiz">
+        <div class="page-title-row"><div><div class="eyebrow">TEST YOUR UNDERSTANDING</div><h1>Quiz centre</h1><p class="muted">Practice makes progress. Pick a topic and give it a go.</p></div><div class="quiz-score-pill"><span>BEST SCORE</span><strong id="bestScore">80%</strong></div></div>
+        <div class="quiz-layout"><div class="quiz-main panel"><div id="quizIntro"><div class="quiz-illustration">✧</div><div class="eyebrow">READY WHEN YOU ARE</div><h2>Small quiz.<br><em>Big brain energy.</em></h2><p class="muted">Choose a subject quiz. You’ll get instant feedback and an explanation after each answer.</p><div class="quiz-options" id="quizOptions"></div></div><div id="quizPlay" class="hidden"></div><div id="quizResult" class="hidden"></div></div><aside class="panel quiz-aside"><div class="eyebrow">YOUR PROGRESS</div><h3>Learning snapshot</h3><div class="quiz-progress-ring" id="quizRing"><div><strong id="quizRingNumber">80%</strong><small>Average score</small></div></div><div class="snapshot-row"><span>Quizzes completed</span><strong id="quizzesCompleted">2</strong></div><div class="snapshot-row"><span>Questions answered</span><strong id="questionsAnswered">10</strong></div><div class="snapshot-row"><span>Correct answers</span><strong id="correctAnswers">8</strong></div><div class="tip-box"><span>✦ Study tip</span><p>Try explaining a topic in your own words. Teaching is one of the best ways to check your understanding.</p></div></aside></div>
+        <footer class="footer">Curiosity looks good on you. <span>STUDYVERSE © 2026</span></footer>
+      </section>
+
+      <section class="page" id="page-planner">
+        <div class="page-title-row"><div><div class="eyebrow">MAKE TIME FOR WHAT MATTERS</div><h1>Study planner</h1><p class="muted">Turn your goals into small, manageable actions.</p></div><button class="primary-button" id="plannerAddButton">＋ Add a task</button></div>
+        <div class="planner-summary"><div><span>YOUR TASKS</span><strong id="plannerTotal">4</strong></div><div><span>COMPLETED</span><strong id="plannerCompleted">1</strong></div><div><span>LEFT TO DO</span><strong id="plannerRemaining">3</strong></div><div class="planner-progress"><span>Daily progress</span><div class="progress-track"><i id="plannerProgressBar" style="width:25%"></i></div><b id="plannerProgressText">25%</b></div></div>
+        <section class="panel planner-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR CHECKLIST</div><h3>Today’s tasks</h3></div><span class="date-label" id="todayDate"></span></div><div id="plannerTasks" class="planner-task-list"></div></section>
+        <div class="planner-quote"><span>“</span><p>You don’t have to see the whole staircase. Just take the first step.</p><small>— Keep showing up</small></div>
+        <footer class="footer">Plan less. Do more. <span>STUDYVERSE © 2026</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="eyebrow" id="modalEyebrow">YOUR WORKSPACE</div><h2 id="modalTitle">Create a note</h2><p class="muted" id="modalDescription">Capture something worth remembering.</p>
+      <form id="noteForm" class="modal-form"><label>Note title<input id="noteTitle" required maxlength="70" placeholder="e.g. The basics of photosynthesis" /></label><label>Subject<select id="noteSubject"><option>Science</option><option>Technology</option><option>Languages</option><option>Business</option><option>General</option></select></label><label>Your notes<textarea id="noteBody" required rows="5" placeholder="Write your key points here..."></textarea></label><div class="modal-actions"><button type="button" class="secondary-button" id="modalCancel">Cancel</button><button type="submit" class="primary-button">Save note <span>→</span></button></div></form>
+      <form id="taskForm" class="modal-form hidden"><label>Task name<input id="taskTitle" required maxlength="70" placeholder="e.g. Review chapter 2" /></label><label>Category<select id="taskCategory"><option>Study</option><option>Revision</option><option>Practice</option><option>Personal</option></select></label><div class="modal-actions"><button type="button" class="secondary-button" id="taskCancel">Cancel</button><button type="submit" class="primary-button">Add task <span>→</span></button></div></form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
